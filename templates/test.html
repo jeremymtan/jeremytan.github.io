@@ -1,0 +1,8 @@
+{% extends "anatole-zola/templates/basic.html" %}
+{% block more_social_link %}
+{% if config.extra.social.resume %}
+<li><a href="{{ config.extra.social.resume }}" aria-label="View Resume"><i class="fa-solid fa-file"></i></a></li>
+{% endif %}
+{% endblock more_social_link %}
+{% block footer %}
+{% endblock footer %}
