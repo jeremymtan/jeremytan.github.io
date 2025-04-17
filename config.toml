@@ -19,7 +19,6 @@ highlight_code = false
 [languages.en]
 title = "Jeremy Tan"
 description = "Aspiring Data Scientist and Software Engineer"
-generate_feed = true
 taxonomies = [
     {name = "tags"},
 ]
