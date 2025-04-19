@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en"  class="theme--light" >
+
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, viewport-fit=cover">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://jeremytan.me/images/apple-touch-icon-144x144.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="120x120" href="https://jeremytan.me/images/apple-touch-icon-120x120.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="https://jeremytan.me/images/apple-touch-icon-72x72.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="57x57" href="https://jeremytan.me/images/apple-touch-icon-57x57.png" />
+  <link rel="short icon" href="https://jeremytan.me/images/favicon.png" type="image/x-icon" />
+  <link rel="stylesheet" href="https://jeremytan.me/style.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" rel="stylesheet">
+  <title>Jeremy Tan • LLM FOMC Simulation: Developing Multi-Agent Frameworks for Federal Interest Rate Prediction</title>
+  
+  
+  
+</head>
+
+<body>
+  <div id="sidebar" class="animated fadeInDown">
+    <div class="logo-title">
+      <div class="title">
+        <img src=https://jeremytan.me/images/logo@2x.png style="width:127px;" alt="logo" />
+        <h3><a href="https://jeremytan.me/">Jeremy Tan</a></h3>
+        <div class="description">
+          <p>Aspiring Data Scientist and Software Engineer</p>
+        </div>
+      </div>
+    </div>
+    <ul class="social-links"><li><a href="https://github.com/jeremymtan" aria-label="Go to Github profile page"><i class="fab fa-github"></i></a></li><li><a href="https://linkedin.com/in/jeremymtan" aria-label="Go to Linkedin profile page"><i class="fab fa-linkedin"></i></a></li>
+      
+    </ul>
+    <div class="footer">
+      
+      <span>Designed by </span><a href="https://www.caicai.me">CaiCai</a>
+      <div class="by_zola"><a href="https://www.getzola.org/" target="_blank">Proudly published with Zola!</a></div>
+      
+    </div>
+  </div>
+  <div id="main">
+    <div class="page-top animated fadeInDown">
+      <div class="nav">
+        
+        
+        
+        
+        <li><a  href="https://jeremytan.me/">Projects</a></li>
+        <li><a  href="https://jeremytan.me/about/">Experience</a></li><li><a 
+            href="https://jeremytan.me/archive/">Archive</a></li></div>
+      <div class="information">
+        <div class="back_btn">
+          <a onclick="window.history.go(-1)" ><i
+              class="fas fa-chevron-left"></i></a>
+        </div>
+        
+        
+        
+        <div class="avatar"><img src="https://jeremytan.me/images/avatar.jpg"></div>
+      </div>
+    </div>
+    <div class="autopagerize_page_element">
+      <div class="content">
+        
+<article class="post animated fadeInDown">
+    <h1><a href="https:&#x2F;&#x2F;jeremytan.me&#x2F;project-1&#x2F;">LLM FOMC Simulation: Developing Multi-Agent Frameworks for Federal Interest Rate Prediction</a></h1>
+
+    
+
+    <div class="post-content"><h2 id="project-motivation">Project Motivation</h2>
+<p>Predicting the Federal Funds Rate (FFR) is crucial for financial institutions like BNY, as it directly impacts net interest margin, liquidity, capital management, and foreign exchange market conditions. The Federal Open Market Committee (FOMC) plays a key role in determining rate changes, which are highly sensitive to economic data and political factors. However, accurately predicting and understanding the FOMC's decisions remains a challenge, particularly in forecasting the rate's direction.</p>
+<p>This project explores the use of a multi-agent simulation framework to mimic the decision-making process of the FOMC. The goal is to predict interest rate changes and understand the factors that influence these decisions by simulating a group of agents representing FOMC members.</p>
+<h2 id="methodology">Methodology</h2>
+<p>The project used a multi-agent system (MAS) to simulate the FOMC's decision-making process. Agents in the system represent the different members of the FOMC, each with distinct attributes such as political affiliation, tenure, and decision-making style. The system incorporates both structured data (e.g., inflation rates, economic growth) and unstructured data (e.g., Beige Book insights, individual voting behaviors) to inform the agents' decisions.</p>
+<h3 id="key-components-of-the-framework">Key Components of the Framework:</h3>
+<ul>
+<li><strong>Clustering</strong>: Agents are grouped based on similar decision-making characteristics (e.g., "Regional Pragmatists" vs. "Academic Balancers").</li>
+<li><strong>Base Model</strong>: A sequential model simulating the voting process and decision-making of agents.</li>
+<li><strong>Simulations</strong>: The agents simulate discussions and interactions to reach a consensus on rate changes.</li>
+<li><strong>Chain of Draft</strong>: A prompt-engineered technique where agents iterate over various potential policy scenarios and narrow down the options through discussion.</li>
+</ul>
+<p>The basic process is as follows and is implemented in CrewAI:</p>
+<p><img src="../images/fomc_fig1.png" alt="Figure 1 High-Level Overview of Steps" /></p>
+<h2 id="results">Results</h2>
+<h3 id="backtesting-evaluation">Backtesting &amp; Evaluation:</h3>
+<p>The model was tested with historical FOMC meetings, simulating decisions for rate hikes, cuts, and holds. The performance of the multi-agent model was compared against baseline models, such as linear regression, to evaluate accuracy in predicting rate changes.</p>
+<ul>
+<li><strong>Linear Regression</strong>: 57.14% accuracy in correctly predicting rate changes.</li>
+<li><strong>Multi-Agent System (Base)</strong>: Significant improvement in accuracy, with a 56% increase over the baseline.</li>
+<li><strong>Chain of Draft Simulation</strong>: Further enhancements in voting accuracy, with stability metrics showing 70-80% consistency in agent decisions across simulations.</li>
+</ul>
+<p>The best performing framework was the base + simulation for long term memory architecture:</p>
+<p><img src="../images/fomc_fig2.png" alt="Figure 2 Best Performing Framework" /></p>
+<h3 id="key-findings">Key Findings:</h3>
+<ul>
+<li>Simulations improved the accuracy of rate predictions compared to traditional quantitative models.</li>
+<li>Multi-agent systems provide a more nuanced understanding of FOMC decision-making, capturing interpersonal dynamics among members.</li>
+<li>The use of "Chain of Draft" prompting allowed agents to improve decision-making time, but failed to reach the same level of accuracy with using simulation for long-term memory.</li>
+</ul>
+<p><img src="../images/fomc_fig3.png" alt="Figure 3 Results" /></p>
+<h2 id="conclusion">Conclusion</h2>
+<p>This study successfully developed a multi-agent framework to simulate FOMC decision-making and predict Federal Funds Rate changes. The framework showed promising results, especially when incorporating simulations for longterm memory. The ability of the model to replicate FOMC dynamics could be a valuable tool for financial institutions like BNY, helping them better anticipate rate decisions and manage risks accordingly.</p>
+<p>By laying the groundwork for further refinement and incorporating additional data, this approach could evolve into a robust predictive tool for FOMC decisions, enhancing the strategic decision-making capabilities of financial firms.</p>
+<h2 id="github-repo-presentation">Github Repo &amp; Presentation</h2>
+<p><a href="https://github.com/adlerviton/BNY_Crew_FOMC_Simulator">Github link</a> <br></p>
+<iframe src="../BNYPresentation.pdf" width="100%" height="600" scrolling="no" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+</div>
+
+    <div class="post-footer">
+        <div class="meta">
+            <div class="info">
+                
+                <i class="far fa-sun"></i><span class="date">2025-02-05</span>
+                
+
+                
+                <i class="fas fa-tags"></i>
+                
+                <a class="tag" href="https://jeremytan.me/tags/LLM">&nbsp;LLM</a>
+                
+                <a class="tag" href="https://jeremytan.me/tags/multi-agent systems">&nbsp;multi-agent systems</a>
+                
+                <a class="tag" href="https://jeremytan.me/tags/predictive modeling">&nbsp;predictive modeling</a>
+                
+                <a class="tag" href="https://jeremytan.me/tags/machine learning">&nbsp;machine learning</a>
+                
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+
+
+
+
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script>
+MathJax = {
+    tex: {
+        displayMath: [['$$', '$$'], ["\\[", "\\]"]],
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+    }
+};
+</script>
+<script type="text/javascript" id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+
+
+
+
+
+
+
+      </div>
+    </div>
+  </div>
+  
+  <script>
+    function showLanguages() {
+      let currentDisplay = document.getElementById("languages").style.display;
+      if (currentDisplay == 'none') {
+        document.getElementById("languages").style.display = 'block';
+      } else {
+        document.getElementById("languages").style.display = 'none';
+      }
+    }
+  </script>
+</body>
+
+</html>

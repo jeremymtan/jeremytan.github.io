@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en"  class="theme--light" >
+
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, viewport-fit=cover">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://jeremytan.me/images/apple-touch-icon-144x144.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="120x120" href="https://jeremytan.me/images/apple-touch-icon-120x120.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="https://jeremytan.me/images/apple-touch-icon-72x72.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="57x57" href="https://jeremytan.me/images/apple-touch-icon-57x57.png" />
+  <link rel="short icon" href="https://jeremytan.me/images/favicon.png" type="image/x-icon" />
+  <link rel="stylesheet" href="https://jeremytan.me/style.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" rel="stylesheet">
+  <title>Jeremy Tan • DeepFake Video Detection</title>
+  
+  
+  
+</head>
+
+<body>
+  <div id="sidebar" class="animated fadeInDown">
+    <div class="logo-title">
+      <div class="title">
+        <img src=https://jeremytan.me/images/logo@2x.png style="width:127px;" alt="logo" />
+        <h3><a href="https://jeremytan.me/">Jeremy Tan</a></h3>
+        <div class="description">
+          <p>Aspiring Data Scientist and Software Engineer</p>
+        </div>
+      </div>
+    </div>
+    <ul class="social-links"><li><a href="https://github.com/jeremymtan" aria-label="Go to Github profile page"><i class="fab fa-github"></i></a></li><li><a href="https://linkedin.com/in/jeremymtan" aria-label="Go to Linkedin profile page"><i class="fab fa-linkedin"></i></a></li>
+      
+    </ul>
+    <div class="footer">
+      
+      <span>Designed by </span><a href="https://www.caicai.me">CaiCai</a>
+      <div class="by_zola"><a href="https://www.getzola.org/" target="_blank">Proudly published with Zola!</a></div>
+      
+    </div>
+  </div>
+  <div id="main">
+    <div class="page-top animated fadeInDown">
+      <div class="nav">
+        
+        
+        
+        
+        <li><a  href="https://jeremytan.me/">Projects</a></li>
+        <li><a  href="https://jeremytan.me/about/">Experience</a></li><li><a 
+            href="https://jeremytan.me/archive/">Archive</a></li></div>
+      <div class="information">
+        <div class="back_btn">
+          <a onclick="window.history.go(-1)" ><i
+              class="fas fa-chevron-left"></i></a>
+        </div>
+        
+        
+        
+        <div class="avatar"><img src="https://jeremytan.me/images/avatar.jpg"></div>
+      </div>
+    </div>
+    <div class="autopagerize_page_element">
+      <div class="content">
+        
+<article class="post animated fadeInDown">
+    <h1><a href="https:&#x2F;&#x2F;jeremytan.me&#x2F;project-3&#x2F;">DeepFake Video Detection</a></h1>
+
+    
+
+    <div class="post-content"><h2 id="project-motivation">Project Motivation</h2>
+<p>Detecting deepfake images and videos is becoming increasingly challenging due to various deepfake techniques (e.g. GANs, diffusion models). By evaluating baseline, pretrained, and fine-tuned models across the DFDC and FakeAVCeleb datasets, we aim to understand how well these models generalize to unseen data distributions. Our goal is to investigate model performance, identify the best architectures for deepfake detection, and assess the impact of hyperparameter tuning and post-hoc enhancements like KNN and SVM classifiers.</p>
+<p><img src="../images/deeplearningfig1.png" alt="Figure 1 Real vs DeepFake" /></p>
+<h3 id="challenge-of-generalization">Challenge of Generalization</h3>
+<p>The increasing sophistication of deepfake generation methods, such as those used by <cite>Meta<sup class="footnote-reference"><a href="#1">1</a></sup></cite>, has led to difficulties in detecting manipulated images through traditional methods. This study aims to address the challenge of creating models that can effectively detect deepfakes across different datasets and generation methods, focusing on the ability of deep learning models to generalize to unseen data. Achieving this generalization is vital for real-world applications, where models must perform reliably across a variety of manipulated content.</p>
+<div class="footnote-definition" id="1"><sup class="footnote-definition-label">1</sup>
+<p><a href="https://ai.meta.com/datasets/dfdc/">DFDC Dataset by Meta</a></p>
+</div>
+<h2 id="methodology">Methodology</h2>
+<p>We preprocessed the DFDC and <cite>FakeAVCeleb<sup class="footnote-reference"><a href="#2">2</a></sup></cite> datasets, focusing on extracting and aligning facial regions from deepfake videos. We employed several deep learning models, including ResNet-18, NASNetLarge, and EfficientNet, using transfer learning and fine-tuning techniques to adapt pretrained models to our task. Models were further tested for their generalization capabilities using a black-box dataset, providing a robust evaluation of their real-world applicability.</p>
+<div class="footnote-definition" id="2"><sup class="footnote-definition-label">2</sup>
+<p><a href="https://sites.google.com/view/fakeavcelebdash-lab/">FakeAVCeleb Dataset by DashLab</a></p>
+</div>
+<p><img src="../images/deeplearningfig2.png" alt="Figure 2 ETL" /></p>
+<h3 id="techniques">Techniques:</h3>
+<ul>
+<li><strong>Preprocessing and Data Augmentation</strong>: Facial regions were detected and cropped using MTCNN, and data augmentation techniques like mirroring and color jittering were applied.</li>
+<li><strong>Transfer Learning</strong>: Models were pretrained on ImageNet, then fine-tuned with the DFDC dataset for deepfake detection.</li>
+<li><strong>Alternative Classification Methods</strong>: KNN and SVM classifiers were used with embeddings from the neural network models.</li>
+<li><strong>Hyperparameter Tuning</strong>: Experiments involved adjusting learning rates and optimizing architectures, particularly focusing on SGD and Adam optimizers.</li>
+</ul>
+<h3 id="data-datasets">Data Datasets</h3>
+<ul>
+<li><strong>DFDC Dataset</strong>: This dataset, provided by Meta, is used for training, validation, and testing the models. It includes a wide range of deepfake videos, generated using various techniques, making it ideal for training models for detection.</li>
+<li><strong>FakeAVCeleb Dataset</strong>: This dataset, used for black-box testing, provides a new challenge with deepfakes generated through different methods and demographic representations. It was specifically chosen to evaluate how well models generalize to unseen datasets.</li>
+</ul>
+<h2 id="results">Results</h2>
+<p>Fine-tuning outperformed frozen transfer learning for most models. EfficientNet fine-tuned with SGD achieved the highest accuracy of 77.16% on the holdout set, while NASNetLarge outperformed the baseline by 6% on the black-box dataset, with a 70.32% accuracy. Despite these gains, significant performance drops were observed on the black-box dataset due to distributional shifts.</p>
+<p><img src="../images/deeplearningfig3.png" alt="Figure 3 Results" /></p>
+<h3 id="performance-insights">Performance Insights:</h3>
+<ul>
+<li><strong>Best Model</strong>: EfficientNet fine-tuned with SGD achieved the highest accuracy on the holdout set.</li>
+<li><strong>Generalization Issues</strong>: Models struggled to generalize on the black-box dataset, highlighting challenges in deepfake detection on unseen data.</li>
+<li><strong>Hyperparameter Impact</strong>: Learning rates and optimization strategies played a crucial role in model performance, with lower learning rates generally yielding better results for complex models like EfficientNet and NASNetLarge.</li>
+</ul>
+<h3 id="comparison-of-architectures">Comparison of Architectures:</h3>
+<ul>
+<li><strong>ResNet-18</strong>: The simplest model, which performed decently on the holdout dataset but struggled with generalization to the black-box dataset.</li>
+<li><strong>NASNetLarge</strong>: Showed strong performance in fine-tuning but still faced significant challenges in generalization.</li>
+<li><strong>EfficientNet</strong>: The most efficient model in terms of both training time and performance on the holdout set, but also showed substantial drops in performance on unseen data.</li>
+</ul>
+<h2 id="discussion-conclusion">Discussion &amp; Conclusion</h2>
+<p>Fine-tuning was essential for achieving good performance, especially with NASNetLarge and EfficientNet. Transfer learning was only effective for NASNetLarge and EfficientNet when fine-tuned. However, models still struggled with generalization to unseen data, which is a key challenge in real-world applications. Despite these limitations, the study highlights the importance of careful hyperparameter tuning, particularly the use of lower learning rates for models with complex architectures like NASNetLarge and EfficientNet.</p>
+<h3 id="the-role-of-hyperparameter-tuning">The Role of Hyperparameter Tuning</h3>
+<p>Learning rates and optimization strategies were found to be critical for the models' performance. Lower learning rates were beneficial for models like EfficientNet and NASNetLarge, which have complex architectures and can easily overfit if training updates are too aggressive. Meanwhile, simpler models like ResNet-18 also benefitted from lower learning rates, as these models are more susceptible to overspecialization when trained on smaller datasets.</p>
+<h3 id="challenges-of-generalization">Challenges of Generalization</h3>
+<p>The significant drop in performance when transitioning from the holdout set to the black-box dataset indicates that current deepfake detection models face challenges in generalizing to unseen deepfakes. This is particularly problematic in real-world scenarios, where deepfakes can vary greatly in generation techniques and characteristics. Future work should focus on improving model generalization through better feature extraction methods, robust training techniques, and expanded datasets.</p>
+<h3 id="future-work">Future Work</h3>
+<p>The results from this study offer valuable insights into improving deepfake detection systems. Future research should focus on:</p>
+<ul>
+<li><strong>Enhanced Generalization</strong>: Developing strategies to improve model robustness across a wide range of deepfake generation methods.</li>
+<li><strong>Alternative Architectures</strong>: Exploring new architectures that can handle the diverse nature of deepfakes while being computationally efficient.</li>
+<li><strong>Larger Datasets</strong>: Incorporating more diverse datasets for training, which could help the models better handle unseen manipulations in the data.</li>
+</ul>
+<h2 id="github-repo-report">Github Repo &amp; Report</h2>
+<p><a href="https://github.com/jeremymtan/Deep_Fake_Image_Detection">Github link</a> <br></p>
+<iframe src="../DL_DeepFake.pdf" width="100%" height="600" scrolling="no" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div>
+
+    <div class="post-footer">
+        <div class="meta">
+            <div class="info">
+                
+                <i class="far fa-sun"></i><span class="date">2024-12-15</span>
+                
+
+                
+                <i class="fas fa-tags"></i>
+                
+                <a class="tag" href="https://jeremytan.me/tags/image detection">&nbsp;image detection</a>
+                
+                <a class="tag" href="https://jeremytan.me/tags/machine learning">&nbsp;machine learning</a>
+                
+                <a class="tag" href="https://jeremytan.me/tags/deep learning">&nbsp;deep learning</a>
+                
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+
+
+
+
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script>
+MathJax = {
+    tex: {
+        displayMath: [['$$', '$$'], ["\\[", "\\]"]],
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+    }
+};
+</script>
+<script type="text/javascript" id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+
+
+
+
+
+
+
+      </div>
+    </div>
+  </div>
+  
+  <script>
+    function showLanguages() {
+      let currentDisplay = document.getElementById("languages").style.display;
+      if (currentDisplay == 'none') {
+        document.getElementById("languages").style.display = 'block';
+      } else {
+        document.getElementById("languages").style.display = 'none';
+      }
+    }
+  </script>
+</body>
+
+</html>

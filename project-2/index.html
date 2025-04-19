@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en"  class="theme--light" >
+
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, viewport-fit=cover">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://jeremytan.me/images/apple-touch-icon-144x144.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="120x120" href="https://jeremytan.me/images/apple-touch-icon-120x120.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="https://jeremytan.me/images/apple-touch-icon-72x72.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="57x57" href="https://jeremytan.me/images/apple-touch-icon-57x57.png" />
+  <link rel="short icon" href="https://jeremytan.me/images/favicon.png" type="image/x-icon" />
+  <link rel="stylesheet" href="https://jeremytan.me/style.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" rel="stylesheet">
+  <title>Jeremy Tan • TherLiD: A Thermometry Linked Dataset</title>
+  
+  
+  
+</head>
+
+<body>
+  <div id="sidebar" class="animated fadeInDown">
+    <div class="logo-title">
+      <div class="title">
+        <img src=https://jeremytan.me/images/logo@2x.png style="width:127px;" alt="logo" />
+        <h3><a href="https://jeremytan.me/">Jeremy Tan</a></h3>
+        <div class="description">
+          <p>Aspiring Data Scientist and Software Engineer</p>
+        </div>
+      </div>
+    </div>
+    <ul class="social-links"><li><a href="https://github.com/jeremymtan" aria-label="Go to Github profile page"><i class="fab fa-github"></i></a></li><li><a href="https://linkedin.com/in/jeremymtan" aria-label="Go to Linkedin profile page"><i class="fab fa-linkedin"></i></a></li>
+      
+    </ul>
+    <div class="footer">
+      
+      <span>Designed by </span><a href="https://www.caicai.me">CaiCai</a>
+      <div class="by_zola"><a href="https://www.getzola.org/" target="_blank">Proudly published with Zola!</a></div>
+      
+    </div>
+  </div>
+  <div id="main">
+    <div class="page-top animated fadeInDown">
+      <div class="nav">
+        
+        
+        
+        
+        <li><a  href="https://jeremytan.me/">Projects</a></li>
+        <li><a  href="https://jeremytan.me/about/">Experience</a></li><li><a 
+            href="https://jeremytan.me/archive/">Archive</a></li></div>
+      <div class="information">
+        <div class="back_btn">
+          <a onclick="window.history.go(-1)" ><i
+              class="fas fa-chevron-left"></i></a>
+        </div>
+        
+        
+        
+        <div class="avatar"><img src="https://jeremytan.me/images/avatar.jpg"></div>
+      </div>
+    </div>
+    <div class="autopagerize_page_element">
+      <div class="content">
+        
+<article class="post animated fadeInDown">
+    <h1><a href="https:&#x2F;&#x2F;jeremytan.me&#x2F;project-2&#x2F;">TherLiD: A Thermometry Linked Dataset</a></h1>
+
+    
+
+    <div class="post-content"><h2 id="project-motivation">Project Motivation</h2>
+<p>TherLiD is an open-source dataset developed to investigate potential racial and ethnic disparities in infrared thermometry within intensive care unit (ICU) settings. The dataset comprises 13,251 paired temperature readings—one from contact thermometers (oral, core, or rectal) and one from infrared-based (temporal) thermometers—measured within a one-hour window. These readings are sourced from the <cite>MIMIC-IV<sup class="footnote-reference"><a href="#1">1</a></sup></cite> and <cite>eICU<sup class="footnote-reference"><a href="#2">2</a></sup></cite> electronic heatlth record (EHR) databases, encompassing 8,511 unique patients. The inclusion of comprehensive demographic and clinical data allows for a detailed analysis of temperature measurement discrepancies across different patient populations.</p>
+<div class="footnote-definition" id="1"><sup class="footnote-definition-label">1</sup>
+<p><a href="https://www.nature.com/articles/s41597-022-01899-x">MIMIC-IV EHR</a></p>
+</div>
+<div class="footnote-definition" id="2"><sup class="footnote-definition-label">2</sup>
+<p><a href="https://www.nature.com/articles/sdata2018178">eICU EHRs</a></p>
+</div>
+<h2 id="methodology">Methodology</h2>
+<p>The TherLiD dataset was constructed by harmonizing three Electronic Health Record (EHR) databases: MIMIC-IV, eICU-CRD-1, and eICU-CRD-2. Key steps in the dataset creation included:</p>
+<ul>
+<li><strong>Temperature Mapping</strong>: Standardizing temperature location labels to ensure consistency across databases.</li>
+<li><strong>Temperature Pairing</strong>: Aligning contact and infrared temperature readings within a one-hour time window, ensuring accurate pairing.</li>
+<li><strong>Patient Contextualization</strong>: Linking temperature pairs with demographic information, vital signs, laboratory values, and Sequential Organ Failure Assessment (SOFA) scores.</li>
+<li><strong>Database Integration</strong>: Standardizing variables across databases to maintain consistency and minimize missing data.</li>
+</ul>
+<p>The final dataset includes variables such as patient identifiers, temperature measurement details, vital signs, laboratory test results, and SOFA scores, providing a comprehensive view of each patient's clinical status.</p>
+<p><img src="../images/therlid_fig1.png" alt="Figure 1 High-Level Overview of Steps" /></p>
+<h2 id="results">Results</h2>
+<p>TherLiD offers a robust framework for analyzing the accuracy of infrared thermometry in diverse patient populations. By providing paired temperature readings along with detailed patient data, it enables researchers to assess potential biases in temperature measurements and their implications for patient care. The dataset's open-access nature facilitates reproducible research and supports the development of more equitable healthcare technologies.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>TherLiD serves as a valuable resource for investigating disparities in temperature measurement accuracy within ICU settings. Its comprehensive data structure supports research aimed at improving diagnostic accuracy and ensuring equitable healthcare delivery. Future studies utilizing TherLiD can contribute to the development of more reliable and unbiased medical devices, enhancing patient outcomes across diverse populations.</p>
+<h2 id="github-repo-published-papers-and-presentation">Github Repo, Published Papers, and Presentation</h2>
+<p><a href="https://github.com/jeremymtan/therlid">Github link</a> <br>
+<a href="https://journals.lww.com/ccmjournal/fulltext/2025/01001/1305__hyperthermia_and_hypothermia_detection.1258.aspx">Society of Critcal Care Medicine published abstract</a> <br>
+<a href="https://physionet.org/content/therlid/1.0.0/">Physionet published open source dataset + paper</a> <br></p>
+<iframe src="../SCCM_Presentation_Jeremy_Tan_Final.pdf" width="100%" height="600" scrolling="no" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+</div>
+
+    <div class="post-footer">
+        <div class="meta">
+            <div class="info">
+                
+                <i class="far fa-sun"></i><span class="date">2025-01-15</span>
+                
+
+                
+                <i class="fas fa-tags"></i>
+                
+                <a class="tag" href="https://jeremytan.me/tags/ETL">&nbsp;ETL</a>
+                
+                <a class="tag" href="https://jeremytan.me/tags/data science">&nbsp;data science</a>
+                
+                <a class="tag" href="https://jeremytan.me/tags/statistical modeling">&nbsp;statistical modeling</a>
+                
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+
+
+
+
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script>
+MathJax = {
+    tex: {
+        displayMath: [['$$', '$$'], ["\\[", "\\]"]],
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+    }
+};
+</script>
+<script type="text/javascript" id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+
+
+
+
+
+
+
+      </div>
+    </div>
+  </div>
+  
+  <script>
+    function showLanguages() {
+      let currentDisplay = document.getElementById("languages").style.display;
+      if (currentDisplay == 'none') {
+        document.getElementById("languages").style.display = 'block';
+      } else {
+        document.getElementById("languages").style.display = 'none';
+      }
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en"  class="theme--light" >
+
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, viewport-fit=cover">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://jeremytan.me/images/apple-touch-icon-144x144.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="120x120" href="https://jeremytan.me/images/apple-touch-icon-120x120.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="https://jeremytan.me/images/apple-touch-icon-72x72.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="57x57" href="https://jeremytan.me/images/apple-touch-icon-57x57.png" />
+  <link rel="short icon" href="https://jeremytan.me/images/favicon.png" type="image/x-icon" />
+  <link rel="stylesheet" href="https://jeremytan.me/style.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" rel="stylesheet">
+  <title>Jeremy Tan • Alex and Mia: Real-Time Emotion-Processing App</title>
+  
+  
+  
+</head>
+
+<body>
+  <div id="sidebar" class="animated fadeInDown">
+    <div class="logo-title">
+      <div class="title">
+        <img src=https://jeremytan.me/images/logo@2x.png style="width:127px;" alt="logo" />
+        <h3><a href="https://jeremytan.me/">Jeremy Tan</a></h3>
+        <div class="description">
+          <p>Aspiring Data Scientist and Software Engineer</p>
+        </div>
+      </div>
+    </div>
+    <ul class="social-links"><li><a href="https://github.com/jeremymtan" aria-label="Go to Github profile page"><i class="fab fa-github"></i></a></li><li><a href="https://linkedin.com/in/jeremymtan" aria-label="Go to Linkedin profile page"><i class="fab fa-linkedin"></i></a></li>
+      
+    </ul>
+    <div class="footer">
+      
+      <span>Designed by </span><a href="https://www.caicai.me">CaiCai</a>
+      <div class="by_zola"><a href="https://www.getzola.org/" target="_blank">Proudly published with Zola!</a></div>
+      
+    </div>
+  </div>
+  <div id="main">
+    <div class="page-top animated fadeInDown">
+      <div class="nav">
+        
+        
+        
+        
+        <li><a  href="https://jeremytan.me/">Projects</a></li>
+        <li><a  href="https://jeremytan.me/about/">Experience</a></li><li><a 
+            href="https://jeremytan.me/archive/">Archive</a></li></div>
+      <div class="information">
+        <div class="back_btn">
+          <a onclick="window.history.go(-1)" ><i
+              class="fas fa-chevron-left"></i></a>
+        </div>
+        
+        
+        
+        <div class="avatar"><img src="https://jeremytan.me/images/avatar.jpg"></div>
+      </div>
+    </div>
+    <div class="autopagerize_page_element">
+      <div class="content">
+        
+<article class="post animated fadeInDown">
+    <h1><a href="https:&#x2F;&#x2F;jeremytan.me&#x2F;project-4&#x2F;">Alex and Mia: Real-Time Emotion-Processing App</a></h1>
+
+    
+
+    <div class="post-content"><h2 id="project-motivation">Project Motivation</h2>
+<p><cite>Alexithymia<sup class="footnote-reference"><a href="#1">1</a></sup></cite>, also known as "emotional blindness," is a neuropsychological phenomenon where individuals have significant difficulty recognizing, expressing, sourcing, and describing their emotions. It is often associated with challenges in forming attachments and establishing interpersonal relationships. Approximately 1 in 10 people have Alexithymia, and many of them struggle in social interactions, particularly in the workplace.</p>
+<p>Emotions AI aims to support individuals with Alexithymia in recognizing emotions and providing immediate suggestions on how to respond, both in terms of language and actions. The application focuses on enhancing communication and inclusivity, helping individuals improve their social interaction skills in professional environments.</p>
+<div class="footnote-definition" id="1"><sup class="footnote-definition-label">1</sup>
+<p><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8456171/">Alexithymia</a></p>
+</div>
+<h2 id="purpose">Purpose</h2>
+<p>The goal of *<em>Alex and Mia</em> is to create a real-time, emotion-processing app that helps users identify emotions in their environment and provide actionable suggestions on how to respond appropriately. Specifically designed for individuals who have difficulty recognizing others' emotions or expressing their own, this app can be an essential tool for fostering inclusion and improving interpersonal communication in the workforce.</p>
+<h2 id="methodology">Methodology</h2>
+<p>The architecture of <strong>Alex and Mia</strong> involves real-time emotion detection using video input, leveraging deep learning technologies. The core components include:</p>
+<ul>
+<li><strong>Face Detection</strong>: Identifying faces in real-time video to focus emotion analysis.</li>
+<li><strong>Emotion Recognition</strong>: Using CNN-based models to classify emotions based on facial expressions.</li>
+<li><strong>Classifier</strong>: The emotion is classified into predefined categories to generate the most relevant response.</li>
+<li><strong>Prompt Engineering</strong>: Based on the detected emotion, the app generates actionable suggestions for users to improve their response in social settings.</li>
+</ul>
+<p><img src="../images/hackathon_fig1.png" alt="Figure 1 Proof of Concept Architecutre" /></p>
+<h2 id="responsible-ai">Responsible AI</h2>
+<p>In the development of <strong>Alex and Mia</strong>, we are committed to responsible AI usage:</p>
+<ul>
+<li><strong>Privacy</strong>: The app ensures that users provide consent for real-time facial recognition, and no video data is stored.</li>
+<li><strong>Bias in Facial Recognition</strong>: The models used are pretrained with a diverse dataset to minimize bias and ensure accurate emotion recognition across different demographics.</li>
+<li><strong>Suggestions, Not Substitutes</strong>: The app provides suggestions, not definitive solutions, and cannot replace authentic social interactions. It aims to enhance social understanding and communication, not substitute genuine human connection.</li>
+</ul>
+<h2 id="conclusion">Conclusion</h2>
+<p><strong>Alex and Mia</strong> is an  application designed to assist individuals with Alexithymia in recognizing emotions and improving their social interactions in the workplace. Through the use of real-time emotion recognition and AI-driven suggestions, the app enhances communication and provides a tool for individuals to thrive in professional environments.</p>
+<p><img src="../images/hackathon_fig2.png" alt="Figure 2 Demo" /></p>
+<h2 id="github-repo-devpost-and-presentation">Github Repo, Devpost, and Presentation</h2>
+<p><a href="https://github.com/jeremymtan/DukeAIHackathon2024">Github link</a> <br>
+<a href="https://devpost.com/software/alex-anbd-mia">Devpost link</a> <br></p>
+<iframe src="../dukeaihackathon2024.pdf" width="100%" height="600" scrolling="no" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+</div>
+
+    <div class="post-footer">
+        <div class="meta">
+            <div class="info">
+                
+                <i class="far fa-sun"></i><span class="date">2024-11-01</span>
+                
+
+                
+                <i class="fas fa-tags"></i>
+                
+                <a class="tag" href="https://jeremytan.me/tags/emotion recognition">&nbsp;emotion recognition</a>
+                
+                <a class="tag" href="https://jeremytan.me/tags/real-time applications">&nbsp;real-time applications</a>
+                
+                <a class="tag" href="https://jeremytan.me/tags/machine learning">&nbsp;machine learning</a>
+                
+                <a class="tag" href="https://jeremytan.me/tags/LLM">&nbsp;LLM</a>
+                
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+
+
+
+
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script>
+MathJax = {
+    tex: {
+        displayMath: [['$$', '$$'], ["\\[", "\\]"]],
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+    }
+};
+</script>
+<script type="text/javascript" id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+
+
+
+
+
+
+
+      </div>
+    </div>
+  </div>
+  
+  <script>
+    function showLanguages() {
+      let currentDisplay = document.getElementById("languages").style.display;
+      if (currentDisplay == 'none') {
+        document.getElementById("languages").style.display = 'block';
+      } else {
+        document.getElementById("languages").style.display = 'none';
+      }
+    }
+  </script>
+</body>
+
+</html>

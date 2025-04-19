@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en"  class="theme--light" >
+
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, viewport-fit=cover">
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://jeremytan.me/images/apple-touch-icon-144x144.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="120x120" href="https://jeremytan.me/images/apple-touch-icon-120x120.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="https://jeremytan.me/images/apple-touch-icon-72x72.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="57x57" href="https://jeremytan.me/images/apple-touch-icon-57x57.png" />
+  <link rel="short icon" href="https://jeremytan.me/images/favicon.png" type="image/x-icon" />
+  <link rel="stylesheet" href="https://jeremytan.me/style.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" rel="stylesheet">
+  <title>Jeremy Tan • 2023 Travelers Analytics Case Competition: Claim Cost Prediction </title>
+  
+  
+  
+</head>
+
+<body>
+  <div id="sidebar" class="animated fadeInDown">
+    <div class="logo-title">
+      <div class="title">
+        <img src=https://jeremytan.me/images/logo@2x.png style="width:127px;" alt="logo" />
+        <h3><a href="https://jeremytan.me/">Jeremy Tan</a></h3>
+        <div class="description">
+          <p>Aspiring Data Scientist and Software Engineer</p>
+        </div>
+      </div>
+    </div>
+    <ul class="social-links"><li><a href="https://github.com/jeremymtan" aria-label="Go to Github profile page"><i class="fab fa-github"></i></a></li><li><a href="https://linkedin.com/in/jeremymtan" aria-label="Go to Linkedin profile page"><i class="fab fa-linkedin"></i></a></li>
+      
+    </ul>
+    <div class="footer">
+      
+      <span>Designed by </span><a href="https://www.caicai.me">CaiCai</a>
+      <div class="by_zola"><a href="https://www.getzola.org/" target="_blank">Proudly published with Zola!</a></div>
+      
+    </div>
+  </div>
+  <div id="main">
+    <div class="page-top animated fadeInDown">
+      <div class="nav">
+        
+        
+        
+        
+        <li><a  href="https://jeremytan.me/">Projects</a></li>
+        <li><a  href="https://jeremytan.me/about/">Experience</a></li><li><a 
+            href="https://jeremytan.me/archive/">Archive</a></li></div>
+      <div class="information">
+        <div class="back_btn">
+          <a onclick="window.history.go(-1)" ><i
+              class="fas fa-chevron-left"></i></a>
+        </div>
+        
+        
+        
+        <div class="avatar"><img src="https://jeremytan.me/images/avatar.jpg"></div>
+      </div>
+    </div>
+    <div class="autopagerize_page_element">
+      <div class="content">
+        
+<article class="post animated fadeInDown">
+    <h1><a href="https:&#x2F;&#x2F;jeremytan.me&#x2F;project-5&#x2F;">2023 Travelers Analytics Case Competition: Claim Cost Prediction </a></h1>
+
+    
+
+    <div class="post-content"><h2 id="project-motivation">Project Motivation</h2>
+<p>The competition centered around using historical claims data to predict the future cost of insurance claims. By utilizing a range of machine learning techniques, including Gradient Boosting, Random Forest, and feature selection, the goal was to build a robust model capable of accurately estimating claim costs for individual policies. Given the  nature of accurate claim prediction in insurance, this study presents an opportunity to enhance pricing strategies, ensure financial stability, and provide more personalized insurance plans.</p>
+<h2 id="methodology">Methodology</h2>
+<p>To develop the claim cost prediction model, a dataset of 45,239 insurance policies from 2004-2005 was utilized, with a focus on instances involving at least one claim. The dataset was split into training (22,619 instances) and test (1,542 instances) sets, with a clear distinction between zero claims and policies with claim costs. The models were trained using various algorithms, including Random Forest and XGBoost, with adjustments made for data imbalance using oversampling and under-sampling techniques. Additionally, more specialized models like the Zero-Inflated Poisson Regression and Tweedie regression were explored, recognizing the prevalence of zero claims and right-skewed claim costs.</p>
+<h2 id="modeling-approaches">Modeling Approaches</h2>
+<ul>
+<li><strong>Random Forest</strong>: This method was explored for its capacity to handle non-linear relationships and its ability to work well with high-dimensional datasets.</li>
+<li><strong>Decision Trees</strong>: Leveraging decision trees provided clear visual interpretations of the model’s decision-making process, ensuring transparency and interpretability.</li>
+<li><strong>Tweedie Distribution</strong>: Applied for datasets with numerous zero values and continuous outcomes, the Tweedie model was a natural choice for claim cost prediction. It efficiently handled both zero-inflation and continuous claim amounts.</li>
+<li><strong>CatBoost &amp; Grid Search</strong>: CatBoost, coupled with grid search for hyperparameter optimization, was explored in handling categorical data efficiently and preventing overfitting in the imbalanced dataset. This model demonstrated superior performance due to its ability to incorporate mixed data types without extensive preprocessing.</li>
+</ul>
+<h2 id="results">Results</h2>
+<p>The CatBoost model, after extensive grid search optimization, emerged as the most promising approach for this dataset. It demonstrated excellent handling of categorical variables, effectively addressing zero-inflation while maintaining strong predictive accuracy. Combining CatBoost with a Tweedie loss function was also explored, but results showed that it underperformed compared to the standalone CatBoost model.</p>
+<h2 id="strengths-limitations">Strengths &amp; Limitations</h2>
+<h3 id="strengths">Strengths</h3>
+<ul>
+<li><strong>Categorical variable handling</strong> with CatBoost.</li>
+<li><strong>Tweedie helps capture outliers</strong> where extreme values occur in the data (right-skewed).</li>
+</ul>
+<h3 id="limitations">Limitations</h3>
+<ul>
+<li><strong>Imbalanced dataset</strong>: A dataset with a large number of claim costs equals zero.</li>
+<li><strong>Simplification of predicting Claim Cost vs Frequency and Severity</strong>: Modeling for just Claim Cost made it harder to understand how specific variables influenced the model. Splitting the model into two, one for predicting the frequency of claims and another for predicting the severity of claims may have been a better approach to interpret the significance of different variables.</li>
+</ul>
+<p>$$
+\displaylines{\text{Claim Cost} = \text{Frequency} \times \text{Severity}}
+$$</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>This study provides a comprehensive approach to predicting auto insurance claim costs using machine learning models. The final models, particularly CatBoost, demonstrated strong predictive accuracy while effectively addressing challenges related to data imbalance and categorical variable handling. Despite some limitations, such as the inability to model claim frequency and severity separately, the findings provide valuable insights into the development of predictive models for insurance pricing. Future work will explore the use of dual models to improve interpretability and refine prediction accuracy.</p>
+<h2 id="github-repo-presentation">Github Repo &amp; Presentation</h2>
+<p><a href="https://github.com/jeremymtan/Traveler_Insurance_Claim_Cost_Modeling">Github link</a> <br></p>
+<iframe src="../travelers.pdf" width="100%" height="600" scrolling="no" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div>
+
+    <div class="post-footer">
+        <div class="meta">
+            <div class="info">
+                
+                <i class="far fa-sun"></i><span class="date">2023-12-15</span>
+                
+
+                
+                <i class="fas fa-tags"></i>
+                
+                <a class="tag" href="https://jeremytan.me/tags/predictive modeling">&nbsp;predictive modeling</a>
+                
+                <a class="tag" href="https://jeremytan.me/tags/machine learning">&nbsp;machine learning</a>
+                
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+
+
+
+
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script>
+MathJax = {
+    tex: {
+        displayMath: [['$$', '$$'], ["\\[", "\\]"]],
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+    }
+};
+</script>
+<script type="text/javascript" id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+
+
+
+
+
+
+
+      </div>
+    </div>
+  </div>
+  
+  <script>
+    function showLanguages() {
+      let currentDisplay = document.getElementById("languages").style.display;
+      if (currentDisplay == 'none') {
+        document.getElementById("languages").style.display = 'block';
+      } else {
+        document.getElementById("languages").style.display = 'none';
+      }
+    }
+  </script>
+</body>
+
+</html>
